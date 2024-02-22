@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
+
+.card
+    font-family: "Noto Sans", sans-serif
+    color: white
+    p
+        margin: 0
+
+    .card-title
+        font-weight: 400
+        font-size: 64px
+        white-space: pre-line
+        margin-bottom: 12px
+
+    .card-content
+        font-weight: 100
+        font-size: 28px
+        white-space: pre-line
+
+.card-direct
+
+    .align-center
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: row
+        p
+            font-family: "Noto Sans", sans-serif
+            font-weight: 100
+            font-size: 38px
+            margin-right: 8px
+
+    a
+        transition: all 240ms
+        margin-top: 64px
+        padding: 8px 22px 8px 22px
+        border: 2px solid white
+        display: inline-block
+        .arrow
+            transition: all 240ms
+            stroke: white
+
+    a:link
+        color: currentColor
+        text-decoration: none
+
+    a:visited
+        color: currentColor
+        text-decoration: none
+
+    a:hover
+        background: white
+        color: #181818
+        text-decoration: none
+        .arrow
+            stroke: #181818
+
+@media screen and (max-width: 1023px) // tablet
+    .card
+        .card-title
+            font-size: 32px
+            margin-bottom: 8px
+            line-height: 78px
+
+        .card-content
+            line-height: 20px
+            font-size: 14px
+    .card-direct
+        a
+            padding: 8px 12px 8px 12px
+            border: 1px solid white
+            margin-top: 24px
+        .align-center
+            p
+                font-size: 16px
+            .arrow
+                width: 20px
+                height: 20px
+
+@media screen and (max-width: 767px) // mobile
+    .card
+
+        .card-title
+            line-height: normal
+            font-size: 28px
+            margin-bottom: 8px
+
+        .card-content
+            line-height: 20px
+            font-size: 12px
