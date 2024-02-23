@@ -1,19 +1,20 @@
 "use client";
 
 import anime from "animejs";
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import "@/styles/joinus.sass";
 
 export function JoinUs() {
   const [played, setPlayed] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    window.addEventListener("scroll", scrollC);
-    return () => window.removeEventListener("scroll", scrollC);
-  }, []);
-
-  const scrollC = () => {
+  const scrollC = useCallback(() => {
     if (inputRef.current == null) {
       return;
     }
@@ -21,7 +22,7 @@ export function JoinUs() {
 
     if (elem.y > 0) return;
     if (played) return;
-    setPlayed(true);
+    console.log("asdfasf");
     anime({
       autoplay: true,
       targets: ".join .anime",
@@ -34,7 +35,13 @@ export function JoinUs() {
       },
       easing: "easeInSine",
     });
-  };
+    inputRef.current.scrollIntoView({ behavior: "instant" });
+    setPlayed(true);
+  }, [played]);
+  useEffect(() => {
+    window.addEventListener("scroll", scrollC);
+    return () => window.removeEventListener("scroll", scrollC);
+  }, [played, scrollC]);
   return (
     <>
       <div className="join-bar" ref={inputRef}></div>

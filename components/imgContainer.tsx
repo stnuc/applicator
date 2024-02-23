@@ -9,6 +9,7 @@ import {
   useState,
 } from "react";
 import Image from "next/image";
+import { prefix } from "@/config/config";
 
 export function FixedImageBaseline({
   setIndex,
@@ -87,6 +88,7 @@ export function FixedImageAnimation({ index }: { index: number }) {
                 src={value.front}
                 alt=""
                 style={{ zIndex: fzi }}
+                priority
               ></Image>
             </div>
             <div
@@ -106,6 +108,7 @@ export function FixedImageAnimation({ index }: { index: number }) {
                 src={value.back}
                 alt=""
                 style={{ zIndex: -99999 }}
+                priority
               ></Image>
             </div>
           </>

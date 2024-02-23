@@ -9,7 +9,7 @@
     "lint": "next lint",
     "ghbuild": "next build && next export",
     "ghpredeploy": "npm run build",
-    "ghdeploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "ghdeploy": "echo > out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "animejs": "^3.2.2",
