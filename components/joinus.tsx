@@ -67,7 +67,7 @@ export function JoinUs() {
               cursor: "pointer",
             }}
             onClick={() => {
-              location.href = "https://forms.gle/J2gN8EsjsSERLRYT9";
+              location.href = "https://forms.gle/fcC2oYi4aMBvq2Fd8";
             }}
           >
             신청하기
